@@ -2,12 +2,16 @@ defmodule Fibonacci.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :fibonacci,
-     version: "0.1.0",
-     elixir: "~> 1.3",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps()]
+    [
+      app: :fibonacci,
+      version: "0.1.0",
+      elixir: "~> 1.3",
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      deps: deps(),
+      description: description(),
+      package: package()
+    ]
   end
 
   # Configuration for the OTP application
@@ -15,6 +19,23 @@ defmodule Fibonacci.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: [:logger]]
+  end
+
+  defp description do
+    """
+    An Elixir interface to the Fibonacci series.
+    """
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README.md"],
+      maintainers: ["Steve Grossi"],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/stevegrossi/fibonacci",
+        "Docs" => "http://hexdocs.pm/fibonacci/"}
+    ]
   end
 
   # Dependencies can be Hex packages:
