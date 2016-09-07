@@ -9,6 +9,10 @@ defmodule FibonacciTest do
   end
 
   test "requires non-negative length" do
-    assert Fibonacci.series(-1) == {:error, "Length must not be negative"}
+    assert Fibonacci.series(-1) == {:error, "Length must be a non-negative integer"}
+  end
+
+  test "requires integers" do
+    assert Fibonacci.series(1.5) == {:error, "Length must be a non-negative integer"}
   end
 end
