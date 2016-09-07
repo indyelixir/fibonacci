@@ -22,7 +22,7 @@ defmodule Fibonacci do
 
   defp compute(length), do: compute([1, 0], length - 2) |> Enum.reverse
   defp compute(acc, 0), do: acc
-  defp compute([n2, n1|_] = acc, remaining) do
+  defp compute([n2, n1 | _] = acc, remaining) do
     compute([n2 + n1 | acc], remaining - 1)
   end
 end
