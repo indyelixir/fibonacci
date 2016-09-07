@@ -13,8 +13,8 @@ defmodule Fibonacci do
       [0, 1, 1, 2, 3]
   """
   def series(length) when length >= 0 and is_integer(length) do
-    seed = {0, 1}
-    Stream.unfold(seed, fn({n1, n2}) -> {n1, {n2, n1+n2}} end)
+    {0, 1}
+    |> Stream.unfold(fn({n1, n2}) -> {n1, {n2, n1+n2}} end)
     |> Enum.take(length)
   end
   def series(_), do: {:error, "Length must be a non-negative integer"}
