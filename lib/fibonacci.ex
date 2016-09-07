@@ -12,17 +12,10 @@ defmodule Fibonacci do
       iex> Fibonacci.series(5)
       [0, 1, 1, 2, 3]
   """
-  def series(0), do: []
-  def series(1), do: [0]
-  def series(2), do: [0, 1]
-  def series(length) when length > 2 and is_integer(length) do
-    compute(length)
+  def series(length) when length >= 0 and is_integer(length) do
+    seed = {0, 1}
+    Stream.unfold(seed, fn({n1, n2}) -> {n1, {n2, n1+n2}} end)
+    |> Enum.take(length)
   end
   def series(_), do: {:error, "Length must be a non-negative integer"}
-
-  defp compute(length), do: compute([1, 0], length - 2) |> Enum.reverse
-  defp compute(acc, 0), do: acc
-  defp compute([n2, n1 | _] = acc, remaining) do
-    compute([n2 + n1 | acc], remaining - 1)
-  end
 end
