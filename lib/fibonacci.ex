@@ -5,7 +5,7 @@ defmodule Fibonacci do
 
   @doc """
   Returns a list of numbers in the Fibonacci series
-  of the specified length.
+  of the specified `length`.
 
   ## Example
 
