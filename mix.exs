@@ -34,7 +34,7 @@ defmodule Fibonacci.Mixfile do
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/stevegrossi/fibonacci",
-        "Docs" => "http://hexdocs.pm/fibonacci/"}
+        "Docs" => "https://hexdocs.pm/fibonacci/"}
     ]
   end
 
@@ -50,7 +50,8 @@ defmodule Fibonacci.Mixfile do
   defp deps do
     [
       {:ex_doc, "~> 0.13", only: :dev},
-      {:earmark, "~> 1.0.1", only: :dev}
+      {:earmark, "~> 1.0.1", only: :dev},
+      {:benchfella, "~> 0.3.0", only: :dev}
     ]
   end
 end
