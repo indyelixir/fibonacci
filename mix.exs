@@ -33,7 +33,7 @@ defmodule Fibonacci.Mixfile do
       maintainers: ["Steve Grossi"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/stevegrossi/fibonacci",
+        "GitHub" => "https://github.com/indyelixir/fibonacci",
         "Docs" => "https://hexdocs.pm/fibonacci/"}
     ]
   end
