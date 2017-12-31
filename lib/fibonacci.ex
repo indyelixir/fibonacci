@@ -13,7 +13,7 @@ defmodule Fibonacci do
       [0, 1, 1, 2, 3]
   """
   def series(length) when is_integer(length) and length >= 0 do
-    stream
+    stream()
     |> Enum.take(length)
   end
   def series(_), do: {:error, "`length` must be a non-negative integer"}
@@ -27,7 +27,7 @@ defmodule Fibonacci do
       1
   """
   def number(sequence) when is_integer(sequence) and sequence > 0 do
-    stream
+    stream()
     |> Enum.at(sequence - 1)
   end
   def number(_), do: {:error, "`sequence` must be a positive integer"}
